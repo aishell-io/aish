@@ -1,4 +1,4 @@
-# aish - A conversation UI and manager for ChatGPT chat
+# aish - A cli client for ChatGPT
 
 
 
