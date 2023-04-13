@@ -16,6 +16,7 @@ Download from the [releases](https://github.com/aishell-io/aish/releases). Choos
 
 Run installer.
 
+<img width="371" alt="win32" src="https://user-images.githubusercontent.com/1261891/231702837-d4b84ee3-a9fb-4444-ba35-156593fca1cb.png">
 
 
 ## MacOS
