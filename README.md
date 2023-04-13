@@ -14,12 +14,17 @@ Download from the [releases](https://github.com/aishell-io/aish/releases). Choos
 
 ## Windows
 
-Run installer.
+Run the installer.
 
 <img width="371" alt="win32" src="https://user-images.githubusercontent.com/1261891/231702837-d4b84ee3-a9fb-4444-ba35-156593fca1cb.png">
 
 
 ## MacOS
+
+Run the installer.
+
+![mac](https://user-images.githubusercontent.com/1261891/231704601-cfbb2a12-2188-4363-ae28-d624823547f6.png)
+
 
 ## Linux
 
