@@ -26,7 +26,11 @@ Run the installer.
 ![mac](https://user-images.githubusercontent.com/1261891/231704601-cfbb2a12-2188-4363-ae28-d624823547f6.png)
 
 
-## Linux
+## Debian/Ubuntu
+
+Use apt install:
+
+    sudo apt install ./aish_0.0.4_Debian_Ubuntu_amd64.deb
 
 # Usage
 
