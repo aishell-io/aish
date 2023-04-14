@@ -36,7 +36,7 @@ Use apt install:
 
 Input prompt as the command argument:
 
-    > aish "What are the best 3D softwares?"
+    $ aish "What are the best 3D softwares?"
     As an AI language model, I don't have personal preferences but I can suggest some popular 3D softwares for you:
 
     1. Autodesk Maya: Widely used in the film and video game industry, Maya is known for its advanced animation and modeling tools.
@@ -46,4 +46,17 @@ Input prompt as the command argument:
     3. 3ds Max: Another Autodesk product, 3ds Max is often used for architectural visualization, product design, and gaming industries.
 
 
+You can also use the interactive conversation mode with *start* command:
+
+    $ aish start
+
+    Hello from ChatGPT-3.5-turbo!
+    Let's start a chat.😊
+    
+    > How are you
+    I'm an AI language model, so I don't have feelings like humans. But I am functioning well and ready to assist you with any task. How can I help you today?
+    
+    
+    > Where is Japan?
+    Japan is an island nation located in East Asia, in the Pacific Ocean. It is bordered by the Sea of Japan to the west and the Pacific Ocean to the east. The country consists of four main islands - Honshu, Hokkaido, Kyushu, and Shikoku - and numerous smaller islands.
 
