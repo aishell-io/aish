@@ -7,6 +7,7 @@ aish is a ChatGPT CLI with local storage that allows users to use ChatGPT in a s
 
 - Local storage for dialog messages.
 - Read from stdio as prompt if no argument.
+- Chat in topic.
 
 # Installation
 
@@ -34,7 +35,9 @@ Use apt install:
 
 # Usage
 
-Input prompt as the command argument:
+There are 2 ways to conversation with ChatGPT:
+
+## 1. Input prompt as the command argument:
 
     $ aish "What are the best 3D softwares?"
     As an AI language model, I don't have personal preferences but I can suggest some popular 3D softwares for you:
@@ -45,6 +48,9 @@ Input prompt as the command argument:
 
     3. 3ds Max: Another Autodesk product, 3ds Max is often used for architectural visualization, product design, and gaming industries.
 
+This way supports input prompt via stdio.
+
+## 2. Interactive conversation
 
 You can also use the interactive conversation mode with *start* command:
 
