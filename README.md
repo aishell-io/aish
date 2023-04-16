@@ -66,3 +66,11 @@ You can also use the interactive conversation mode with *start* command:
     > Where is Japan?
     Japan is an island nation located in East Asia, in the Pacific Ocean. It is bordered by the Sea of Japan to the west and the Pacific Ocean to the east. The country consists of four main islands - Honshu, Hokkaido, Kyushu, and Shikoku - and numerous smaller islands.
 
+## Topic
+
+By default, ChatGPT has the capability to recognize the contextual meaning of conversations. However, when the context goes beyond a predefined threshold, a new topic will be initiated, leading to the loss of previous context.
+
+To force a new topic any time, issue the command:
+
+    aish topic new
+
