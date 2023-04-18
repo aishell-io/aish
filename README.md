@@ -1,6 +1,8 @@
 aish - A ChatGPT CLI
 ====================
 
+English | [简体中文](./docs/README.zh_CN.md)
+
 aish is a ChatGPT CLI with local storage that allows users to use ChatGPT in a simple and efficient way. It is conveniently integrated with other CLI commands, due to its capability to read from stdio.
 
 # Features
