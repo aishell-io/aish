@@ -1,47 +1,57 @@
-aish - A ChatGPT CLI
-====================
+# aish - ChatGPT命令行客户端
 
-aish is a ChatGPT CLI with local storage that allows users to use ChatGPT in a simple and efficient way. It is conveniently integrated with other CLI commands, due to its capability to read from stdio.
+aish 是用于管理与 ChatGPT 聊天的命令行客户端。
 
-# Features
+## 主要功能
 
-- Local storage for dialog messages.
-- Read from stdio as prompt if no argument.
-- Chat in topic.
+- 本地存储聊天对话。
+- 支持标准输入输出。
+- 上下文支持（基于topic的聊天）。
+- 个人key配置。
 
-# Installation
+## 安装与卸载
 
-Download from the [releases](https://github.com/aishell-io/aish/releases). Choose the proper distribution for your operation system.
+### 下载安装包
 
-## Windows
+从[下载地址](https://github.com/aishell-io/aish/releases)下载你的计算机操作系统对应的安装包。
 
-Run the installer.
+### Windows
+
+运行安装包：
 
 <img width="371" alt="win32" src="https://user-images.githubusercontent.com/1261891/231702837-d4b84ee3-a9fb-4444-ba35-156593fca1cb.png">
 
 
-## MacOS
+### MacOS
 
-Run the installer.
+运行安装包：
 
 ![mac](https://user-images.githubusercontent.com/1261891/231704601-cfbb2a12-2188-4363-ae28-d624823547f6.png)
 
 
-## Debian/Ubuntu
+### Debian/Ubuntu
 
-Use apt install:
+使用 apt 命令进行安装：
 
     sudo apt install ./aish_0.0.4_Debian_Ubuntu_amd64.deb
 
-# Usage
+## 用法
 
-Use *config* command to set up your key:
+### 配置key（可选）
+
+如果你有 ChatGPT key，则使用下面的命令进行配置：
 
     aish config key
 
-Then you can start chat now. There are 2 ways to conversation with ChatGPT:
+如果没有key，则无需配置，聊天将通过代理实现。
 
-## 1. Input prompt as the command argument:
+### 开始聊天
+
+有两种基本方式进行聊天：
+
+## 一次提交Prompt
+
+Prompt作为参数即可进行一次性对话：
 
     $ aish "What are the best 3D softwares?"
     As an AI language model, I don't have personal preferences but I can suggest some popular 3D softwares for you:
@@ -52,29 +62,29 @@ Then you can start chat now. There are 2 ways to conversation with ChatGPT:
 
     3. 3ds Max: Another Autodesk product, 3ds Max is often used for architectural visualization, product design, and gaming industries.
 
-This way supports input prompt via stdio.
 
-## 2. Interactive conversation
+## 2. 交互方式
 
-You can also use the interactive conversation mode with *start* command:
+使用 start 命令开始交互式聊天：
 
     $ aish start
 
     Hello from ChatGPT-3.5-turbo!
     Let's start a chat.😊
-    
+
     > How are you
     I'm an AI language model, so I don't have feelings like humans. But I am functioning well and ready to assist you with any task. How can I help you today?
-    
-    
+
+
     > Where is Japan?
     Japan is an island nation located in East Asia, in the Pacific Ocean. It is bordered by the Sea of Japan to the west and the Pacific Ocean to the east. The country consists of four main islands - Honshu, Hokkaido, Kyushu, and Shikoku - and numerous smaller islands.
 
-## Topic
+## 话题
 
-By default, ChatGPT has the capability to recognize the contextual meaning of conversations. However, when the context goes beyond a predefined threshold, a new topic will be initiated, leading to the loss of previous context.
+默认支持话题聊天（上下文感知）。
 
-To force a new topic any time, issue the command:
+话题聊天比较费 token，使用下面的命令将开始一个新话题（即清除当前上下文）：
 
     aish topic new
+
 
