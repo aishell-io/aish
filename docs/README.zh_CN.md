@@ -45,11 +45,22 @@ aish 是用于管理与 ChatGPT 聊天的命令行客户端。
 
 如果没有key，则无需配置，聊天将通过代理实现。
 
+### 查看可用使用的模型
+
+如果你配置了key，你就可以使用 *model* 命令来查看可使用的模型：
+
+    # 查看全部可使用模型
+    aish model list
+
+    # 查看一个模型的具体情况
+    aish model list -m gpt-3.5-turbo
+
+
 ### 开始聊天
 
 有两种基本方式进行聊天：
 
-## 一次提交Prompt
+#### 一次提交Prompt
 
 Prompt作为参数即可进行一次性对话：
 
@@ -63,7 +74,7 @@ Prompt作为参数即可进行一次性对话：
     3. 3ds Max: Another Autodesk product, 3ds Max is often used for architectural visualization, product design, and gaming industries.
 
 
-## 2. 交互方式
+#### 2. 交互方式
 
 使用 start 命令开始交互式聊天：
 
@@ -79,6 +90,14 @@ Prompt作为参数即可进行一次性对话：
     > Where is Japan?
     Japan is an island nation located in East Asia, in the Pacific Ocean. It is bordered by the Sea of Japan to the west and the Pacific Ocean to the east. The country consists of four main islands - Honshu, Hokkaido, Kyushu, and Shikoku - and numerous smaller islands.
 
+## 使用命令行管道
+
+aish 支持标准输入/输出，因此可以使用管道来连接其他命令的输入/输出，例如：
+
+    $ echo "how are you" | aish
+    As an AI language model, I don't have emotions, but I'm functioning properly and ready to assist you with any questions or tasks you might have. How can I assist you today?
+
+
 ## 话题
 
 默认支持话题聊天（上下文感知）。
@@ -86,5 +105,6 @@ Prompt作为参数即可进行一次性对话：
 话题聊天比较费 token，使用下面的命令将开始一个新话题（即清除当前上下文）：
 
     aish topic new
+
 
 
