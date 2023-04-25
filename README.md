@@ -3,7 +3,10 @@ aish - A ChatGPT CLI
 
 English | [简体中文](./docs/README.zh_CN.md)
 
+![gif](./docs/images/browse-copy.gif)
+
 aish is a ChatGPT CLI with local storage that allows users to use ChatGPT in a simple and efficient way. It is conveniently integrated with other CLI commands, due to its capability to read from stdio.
+
 
 # Features
 
@@ -79,4 +82,12 @@ By default, ChatGPT has the capability to recognize the contextual meaning of co
 To force a new topic any time, issue the command:
 
     aish topic new
+
+## Browse mode
+
+Input b to enter the browser mode. Then you can use Up/Down arrow key or k/j to browse the chat history.
+
+## Copy
+
+During the chat, you can use the c command to copy the last response from ChatGPT to clipboard.
 
