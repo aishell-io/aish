@@ -1,0 +1,97 @@
+{
+  "name": "aish",
+  "version": "0.1.5",
+  "description": "A ChatGPT CLI with local storage capability.",
+  "author": "Henry Hu",
+  "type": "module",
+  "bin": {
+    "aish": "./bin/run.js"
+  },
+  "homepage": "https://github.com/aishell-io/aish",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "aishell-io/aish",
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@clack/prompts": "^0.6.3",
+    "@inquirer/core": "^1.0.0",
+    "@oclif/core": "^2",
+    "@oclif/plugin-help": "^5",
+    "@oclif/plugin-plugins": "^2.4.0",
+    "axios": "^1.3.4",
+    "clipboardy": "^3.0.0",
+    "dayjs": "^1.11.7",
+    "dotenv": "^16.0.3",
+    "inquirer": "^9.1.4",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2.3.10",
+    "@types/chai": "^4",
+    "@types/clipboardy": "^2.0.1",
+    "@types/inquirer": "^9.0.3",
+    "@types/mocha": "^9.0.0",
+    "@types/mute-stream": "^0.0.1",
+    "@types/node": "^16.18.14",
+    "chai": "^4",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.3",
+    "mocha": "^9",
+    "oclif": "^3",
+    "shx": "^0.3.3",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  },
+  "oclif": {
+    "bin": "aish",
+    "dirname": "aish",
+    "commands": "./dist/commands",
+    "default": "run",
+    "additionalVersionFlags": [
+      "-v"
+    ],
+    "additionalHelpFlags": [
+      "-h"
+    ],
+    "hooks": {
+      "init": "./dist/hooks/init"
+    },
+    "macos": {
+      "identifier": "aish.aishell.io"
+    },
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "model": {
+        "description": "Model management commands"
+      }
+    }
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint . --ext .ts --config .eslintrc",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "yarn lint",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "bugs": "https://github.com/packdir/ai/issues",
+  "keywords": [
+    "oclif"
+  ],
+  "types": "dist/index.d.ts"
+}
