@@ -181,6 +181,20 @@ interface Message {
   created_at: number;
 }
 
+//interface Topic {
+//  id: number;
+//  title: string;
+//  created_at: number;
+//}
+
+interface TopicMessage {
+  tid: number;
+  title: string;
+  mid: number;
+  body: string;
+  created_at: number;
+}
+
 /**
  * Retrieve messages.
  * @param start Start row number.
@@ -291,14 +305,15 @@ export const createTopic = async (): Promise<number> => {
   })
 } 
 
-export const listTopics = (): Promise<Message[]> => {
+export const listTopics = (): Promise<TopicMessage[]> => {
   return new Promise((resolve, reject) => {
     try {
       const db = new sqlite3.Database(DB_SQLite3);
       const sql = `
-        SELECT id, title, created_at
-        FROM topics
-        ORDER BY id ASC
+        SELECT t.id tid, t.title, t.created_at, m.id mid, m.body
+        FROM topics t
+        LEFT JOIN messages m ON t.id = m.topic_id
+        ORDER BY t.id DESC, m.id ASC
       `;
 
       db.all(
