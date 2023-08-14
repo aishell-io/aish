@@ -73,7 +73,7 @@
     "topicSeparator": " ",
     "topics": {
       "model": {
-        "description": "Model management commands"
+        "description": "Manage models"
       }
     }
   },

@@ -244,19 +244,18 @@ export const retrieveMessagesByTopicId = (topicId: number): Promise<Message[]> =
       db.all(
         sql,
         [topicId],
-    	  (err: any, row: any) => {
-    	    if (err) {
-    	  	  //console.error(err.message);
-    	  	  resolve([]);
-    	    } else {
-    	  	  const result = row ? row : [];
-    	  	  resolve(result);
-    	    }
-    	  }
+        (err: any, row: any) => {
+          if (err) {
+            resolve([]);
+          } else {
+            const result = row ? row : [];
+            resolve(result);
+          }
+        }
       );
       db.close();
     } catch (err) {
-      console.log("error 1002");
+      console.log("error 1005");
       resolve([]);
     }
   });
@@ -291,6 +290,36 @@ export const createTopic = async (): Promise<number> => {
     db.close();
   })
 } 
+
+export const listTopics = (): Promise<Message[]> => {
+  return new Promise((resolve, reject) => {
+    try {
+      const db = new sqlite3.Database(DB_SQLite3);
+      const sql = `
+        SELECT id, title, created_at
+        FROM topics
+        ORDER BY id ASC
+      `;
+
+      db.all(
+        sql,
+        [],
+        (err: any, row: any) => {
+          if (err) {
+            resolve([]);
+          } else {
+            const result = row ? row : [];
+            resolve(result);
+          }
+        }
+      );
+      db.close();
+    } catch (err) {
+      console.log("error 1006");
+      resolve([]);
+    }
+  });
+}
 
 /**
  * Get the last topic id.

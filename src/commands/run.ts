@@ -1,8 +1,7 @@
-import {Args, Command, Flags} from '@oclif/core'
+import { Args, Command, Flags } from '@oclif/core'
 import chalk from 'chalk';
 import readPipe from '../services/read-stdin-stream.js'
 import { talkToModel } from '../services/chatgpt-api.js';
-//import { createTopic, getLastTopicId, retrieveMessagesByTopicId } from '../services/messages.js';
 
 export default class Run extends Command {
   static description = 'Talk to the model.'
